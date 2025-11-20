@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program perhitungan umur</title>
+ </head>
+ <body>
+    <h2>
+        Program Hitung Umur
+    </h2>
+    <label for="tahun"> Masukan Tahun Lahir</label>
+    <input type="number" id="tahun" placeholder="Contoh 2000">
+    <button onclick="hitungUmur()"> Hitung </button>
+    <p id="Hasil"></p>
+    <script>
+        function hitungUmur(){
+            let TahunLahir = document.getElementById("tahun").value;
+            let TahunSekarang = new Date().getFullYear();
+            let Umur = TahunSekarang - TahunLahir;
+
+            document.getElementById("Hasil").innerHTML =
+            "Umur kamu sekarang adalah" + Umur + "tahun";
+            if (TahunLahir ===""){
+                document.getElementById("Hasil").innerText=
+                "Tahun Lahir Tidak Boleh Kosong.";
+                return;
+            } 
+
+            if (TahunLahir > TahunSekarang){
+                document.getElementById("Hasil").innerText =
+                "Error : Tahun Lahir ngga boleh lebih besar dari tahun sekarang.";
+                return;
+            }
+            let umur = TahunSekarang - TahunLahir;
+            document.getElementById("Hasil").innerText= "Umur"
+            }
+    </script>
+ </body>
+ </html>
